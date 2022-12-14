@@ -36,3 +36,7 @@ Task-14	Bandit	Completed
 ---
 Task-15	Project Euler	1 question only(but only 4 out 6 test cases running)
 ---
+
+As mentioned before my name is Rajasekhar.Before coming to amrita i did some reseach about the clubs in amrita out of them am-foss stood out for me as provies a competative atmossphere which was later again increased during disscution of clubs in induction period.
+I have some prior knowlage in c until pointers and python till basic funtions.
+NOW after all these task i learnt that i have so much to learn rather that just lanquages while some of the tasks seems very frustrating and some very informative and intresting.I felt like learing them with much more clarity.
