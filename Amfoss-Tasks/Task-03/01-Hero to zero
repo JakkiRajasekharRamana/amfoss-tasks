@@ -1,0 +1,64 @@
+def findDuplicateIndices(level_of_heros):
+  for i in range(0,num_of_heros):
+    for j in range(i+1,num_of_heros):
+      if (level_of_heros[i] == level_of_heros[j]):
+        #print("Duplicate Value is = ", level_of_heros[i])
+        return True, i, j, level_of_heros[i]
+  return False, -1, -1, -1
+
+def findHigherLevelIndex(level_of_heros):
+    higher_level = max(level_of_heros)
+    for i in range(0,num_of_heros):    
+        if (higher_level == level_of_heros[i]):
+            return i
+
+def isAllDebuffed(level_of_heros):
+    for i in range(0,num_of_heros):
+        if(level_of_heros[i] != 0):
+            return False
+    return True
+
+def calculateManas(level_of_heros):
+    num_of_manas = 0
+    lower_level = min(level_of_heros)
+    #print("lower_level =", lower_level)
+    higher_level = max(level_of_heros)
+    #print("higher_level =", higher_level)
+    isAnyDuplicate, duplicate_index_1, duplicate_index_2 , duplicate_value= findDuplicateIndices(level_of_heros)
+    #print("duplicate_indices and Value are :", duplicate_index_1, duplicate_index_2, duplicate_value)
+    if((isAnyDuplicate == True)&(duplicate_value!=0)):
+        level_of_heros[duplicate_index_1] = 0
+        num_of_manas = num_of_manas+1
+        #print(level_of_heros)
+        level_of_heros[duplicate_index_2] = 0
+        num_of_manas = num_of_manas+1
+        #print(level_of_heros)
+    else:  
+        higher_level_index = findHigherLevelIndex(level_of_heros)
+        #print("higher_level_index =", higher_level_index)
+        level_of_heros[higher_level_index] = lower_level
+        num_of_manas = num_of_manas+1
+        #print(level_of_heros)
+
+    return num_of_manas
+
+
+
+import sys
+
+input_data = sys.stdin.readlines()
+#print(input_data)
+num_of_cities = int(input_data[0])
+#print(num_of_cities)
+for i in range(1,num_of_cities*2,2):
+    num_of_heros = int(input_data[i])
+    #print(num_of_heros)
+    level_of_heros_string = input_data[i+1]
+    level_of_heros = []
+    for j in level_of_heros_string.split():  
+        level_of_heros.append(int(j))
+    
+    total_manas = 0
+    while(isAllDebuffed(level_of_heros) == False):
+        total_manas = total_manas+ calculateManas(level_of_heros)
+    print(total_manas)
