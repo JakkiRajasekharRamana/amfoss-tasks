@@ -1,6 +1,6 @@
 # amfoss-tasks
 
-I am Jakki Rajasekhar Ramana from Hyderabad,Telengana.Freasher at Amrita School of Engineering(CSE-A-22025)
+I am Jakki Rajasekhar Ramana from Hyderabad,Telengana.Fresher at Amrita School of Engineering(CSE-A-22025)
 ---
 Tasks List	Description	Status
 ---
